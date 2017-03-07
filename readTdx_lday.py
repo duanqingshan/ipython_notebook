@@ -181,12 +181,12 @@ def plot_candles(pricing, title=None, volume_bars=False, color_function=None, te
         volume = pricing['V']
         volume_scale = None
         scaled_volume = volume
-        if volume.max() > 1000000:
-            volume_scale = 'M'
-            scaled_volume = volume / 1000000
-        elif volume.max() > 1000:
-            volume_scale = 'K'
-            scaled_volume = volume / 1000
+        if volume.max() > 1000000/100.0:
+            volume_scale = u'百万股' #'M'
+            scaled_volume = volume / 10000.0
+        elif volume.max() > 1000/100.0:
+            volume_scale = u'千股'
+            scaled_volume = volume / 10.0
         ax2.bar(x-0.4, scaled_volume, color=candle_colors, linewidth=0.2, edgecolor='black')
         volume_title = 'Volume'
         if volume_scale:
