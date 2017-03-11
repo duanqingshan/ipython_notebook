@@ -2,9 +2,8 @@
 """
 Created on Tue Mar 07 12:16:56 2017
 
-@author: Administrator
-
-readTdx_lday.py
+@author:duanqs
+readTdx_lday.py   读取通达信日线二进制数据
 """
 
 import numpy as np
